@@ -1,5 +1,7 @@
 package org.mathieu.cleanrmapi.domain.location
 
+import org.mathieu.cleanrmapi.domain.character.models.Character
+
 
 interface LocationRepository {
     /**
@@ -17,4 +19,6 @@ interface LocationRepository {
      * @return Une version simplifiée du lieu spécifié.
      */
     suspend fun getLocationPreview(id: Int): LocationPreview
+
+    suspend fun getCharactersIn(locationId: Int): List<Character>
 }

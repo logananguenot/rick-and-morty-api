@@ -9,6 +9,7 @@ import org.mathieu.cleanrmapi.ui.core.composable
 import org.mathieu.cleanrmapi.ui.screens.characterdetails.CharacterDetailsScreen
 import org.mathieu.cleanrmapi.ui.screens.characters.CharactersScreen
 import org.mathieu.cleanrmapi.ui.screens.episodedetails.EpisodeDetailsScreen
+import org.mathieu.cleanrmapi.ui.screens.locationDetails.LocationDetailsScreen
 
 @Composable
 fun App() {
@@ -48,6 +49,17 @@ private fun MainContent() {
                 id = backStackEntry.arguments?.getInt("episodeId") ?: -1
             )
 
+        }
+
+        composable(
+            destination = Destination.LocationDetails()
+        ) {
+            backStackEntry ->
+
+            LocationDetailsScreen(
+                navController = navController,
+                id = backStackEntry.arguments?.getInt("locationId") ?: -1
+            )
         }
 
     }
