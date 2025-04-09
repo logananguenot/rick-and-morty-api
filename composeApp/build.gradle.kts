@@ -138,6 +138,7 @@ android {
 dependencies {
 
     implementation(libs.firebase.crashlytics.buildtools)
+    implementation(libs.androidx.media3.exoplayer)
     // KSP support for Room Compiler.
     listOf(
         "kspAndroid",
